@@ -7,7 +7,7 @@ namespace Nertan_Oana_Lab2.Models
     public class Book
     {
         public int ID { get; set; }
-        [Display(Name = "Book Title TITLE")]
+        [Display(Name = "Book Title")]
         public string Title { get; set; }
         
         [Column(TypeName = "decimal(6, 2)")]
@@ -21,5 +21,7 @@ namespace Nertan_Oana_Lab2.Models
 
         public int? AuthorID { get; set; }
         public Author? Author { get; set; }
+
+        public ICollection<BookCategory>? BookCategories { get; set; }
     }
 }
