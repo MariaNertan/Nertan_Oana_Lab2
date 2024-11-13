@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Nertan_Oana_Lab2.Models;
 
 namespace Nertan_Oana_Lab2.Pages.Books
 {
+    [Authorize(Roles = "Admin")]
     public class EditModel  : BookCategoriesPageModel 
     {
         private readonly Nertan_Oana_Lab2.Data.Nertan_Oana_Lab2Context _context;
